@@ -1,0 +1,64 @@
+<!-- Table Start -->
+<div>
+    <div class="payments-container">
+        <!-- FIRST CARD -->
+        <!-- 2ND CARD -->
+        <div class="dashboard-card payments-table p-4">
+            <div>
+                <div>
+                    <h4 class="mb-4">Payments</h4>
+                </div>
+
+                <div class="table-container">
+                    <div  *ngIf="!Orders" class="empty">
+                        <p>Payments will appear here</p>
+                    </div>
+
+                    <table *ngIf="Orders" mat-table [dataSource]="Orders" class="demo-table table-light">
+                        <ng-container matColumnDef="date">
+                            <th mat-header-cell *matHeaderCellDef> Date </th>
+                            <td mat-cell *matCellDef="let element"> 11/17/2024 </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="product">
+                            <th mat-header-cell *matHeaderCellDef> Product</th>
+                            <td mat-cell *matCellDef="let element"> Mettle </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="orderno">
+                            <th mat-header-cell *matHeaderCellDef> Order No. </th>
+                            <td mat-cell *matCellDef="let element"> AMN1230N </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="delivery">
+                            <th mat-header-cell *matHeaderCellDef> Delivery Status </th>
+                            <td mat-cell *matCellDef="let element"> Delivered </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="amount">
+                            <th mat-header-cell *matHeaderCellDef> Amount </th>
+                            <td mat-cell *matCellDef="let element"> $200 </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="payment">
+                            <th mat-header-cell *matHeaderCellDef> Payment Method </th>
+                            <td mat-cell *matCellDef="let element">Bank Account</td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef> Payment Status </th>
+                            <td mat-cell *matCellDef="let element">Received</td>
+                        </ng-container>
+                    
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Table End -->

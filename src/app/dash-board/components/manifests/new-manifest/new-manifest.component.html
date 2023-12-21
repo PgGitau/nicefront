@@ -1,0 +1,23 @@
+<div class="container">
+    <h3 class="clo-lg-5 text-center">Manifest For {{data.object.name}}</h3>
+    <form [formGroup]="firstFormGroup">
+        <mat-form-field>
+          <mat-label>
+            Search a Warehouser
+          </mat-label>
+          <input formControlName="warehouser" matInput type="text" [matAutocomplete]="auto" />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let warehouser of filteredOptions" [value]="warehouser.email">
+              {{warehouser.username}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <input matInput placeholder="quantity" formControlName="quantity" required>
+        </mat-form-field>
+    </form>
+    <br>
+    <button (click)="postManifest()" mat-button>Submit</button>
+</div>

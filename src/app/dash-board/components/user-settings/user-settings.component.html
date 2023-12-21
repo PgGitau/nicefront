@@ -1,0 +1,82 @@
+<div class="settings-container">
+    <!-- PHONE EDIT -->
+    <div class="phone-number settings-card">
+        <div class="phone-header">
+            <h2>Edit phone number</h2>
+        </div>
+    
+        <div class="phone-edit">
+            <p>This is the phone number associated with your account:<br> <span>+254 734567891</span></p>
+
+            <form ngNativeValidate>
+                <div class="phone-input input-card">
+                    <input id="phone" name="phone" class="form-control"
+                        type="tel" required>
+                    <label for="phone" class="label-name">
+                        <span class="content-name">Change Phone Number:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- EMAIL EDIT -->
+    <div class="email settings-card">
+        <div class="email-header">
+            <h2>Edit Email address</h2>
+        </div>
+    
+        <div class="email-edit">
+            <p>This is the email address associated with your account:<br> <span>mkulima@gmail.com</span></p>
+
+            <form ngNativeValidate>
+                <div class="email-input input-card">
+                    <input id="email" name="email" [(ngModel)]="newEmail" class="form-control"
+                        type="email" required>
+                    <label for="email" class="label-name">
+                        <span class="content-name">Change Email Address:</span>
+                    </label>
+                </div>
+
+                <button (click)="showConfirmPasswordDialog()" type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PASSWORD EDIT -->
+    <div class="password settings-card">
+        <div class="password-header">
+            <h2>Edit Password</h2>
+        </div>
+
+        <div class="oldpassword-edit">
+            <form (ngSubmit)="changePassword()">
+                <div class="oldpassword-input input-card">
+                    <input id="oldpassword" [(ngModel)]="password" name="oldpassword" class="form-control"
+                        type="password" required>
+                    <label for="oldpassword" class="label-name">
+                        <span class="content-name">Old Password:</span>
+                    </label>
+                </div>
+                <div class="password-input input-card">
+                    <input id="password" name="password" [(ngModel)]="newPassword" class="form-control"
+                        type="password" required>
+                    <label for="password" class="label-name">
+                        <span class="content-name">New Password:</span>
+                    </label>
+                </div>
+                <div class="password-input input-card">
+                    <input id="password" name="password" [(ngModel)]="confirmNewPassword" class="form-control"
+                        type="password" required>
+                    <label for="password" class="label-name">
+                        <span class="content-name">Confirm New Password:</span>
+                    </label>
+                </div>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+.sponsorexhibitor-container {
+    background-color: #fff;
+    padding-top: .5rem;
+}
+
+:host ::ng-deep ul.navs-tabs {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.exhibitor-container, 
+.sponsorship-container {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+sup {
+    color: green;
+}
+
+.form-control:focus {
+    border: 2px solid #0000ff85;
+    box-shadow: none;
+}
+
+h3 span {
+    color: green;
+}
+
+.exhibitor-container form,
+.sponsorship-container form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.exhibitor-container form select,
+.sponsorship-container form select {
+    font-size: 1rem;
+}
+
+.exhibitor-container form input,
+.exhibitor-container form select,
+.sponsorship-container form input,
+.sponsorship-container form select {
+    width: 100%;
+    border: 1px solid #8080807a;
+    border-radius: 4px;
+    height: 40px;
+    padding-inline: .5rem;
+}
+
+/* input animations */
+.exhibitor-container .input-card,
+.sponsorship-container .input-card {
+    position: relative;
+}
+
+.exhibitor-container .input-card label,
+.sponsorship-container .input-card label {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.exhibitor-container .input-card label::after,
+.sponsorship-container .input-card label::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s  ease;
+}
+
+.exhibitor-container .input-card .content-name,
+.sponsorship-container .input-card .content-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all .3s ease;
+}
+
+.exhibitor-container .input-card input:focus + .label-name .content-name,
+.exhibitor-container .input-card input:valid + .label-name .content-name,
+.sponsorship-container .input-card input:focus + .label-name .content-name,
+.sponsorship-container .input-card input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+}
+
+.exhibitor-container .input-card input:focus + .label-name::after,
+.exhibitor-container .input-card input:valid + .label-name::after,
+.sponsorship-container .input-card input:focus + .label-name::after,
+.sponsorship-container .input-card input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+/* end of input animations */
+
+.exhibitor-container form button,
+.sponsorship-container form button {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border-radius: 0;
+}
+
+.exhibitor-container form .form-extras,
+.sponsorship-container form .form-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.exhibitor-container form .form-extras p a,
+.sponsorship-container form .form-extras p a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    .exhibitor-container,
+    .sponsorship-container {
+        padding: 5px;
+    }
+}

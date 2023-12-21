@@ -1,0 +1,17 @@
+.logo {
+  height: 100%;
+}
+
+.logo img{
+  border-radius: 50px;
+  height: 100%;
+}
+
+.sell {
+  cursor: pointer;
+}
+
+.register-expo,
+.register-trip {
+  cursor: pointer;
+}

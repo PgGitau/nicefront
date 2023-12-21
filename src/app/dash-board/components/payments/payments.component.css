@@ -1,0 +1,58 @@
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+.payments-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    width: 95%;
+    height: max-content;
+    gap: 30px;
+    margin-inline: auto;
+}
+
+.payments-container .dashboard-card {
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 4px;
+    height: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+
+
+/* table */
+.payments-container .payments-table {
+    grid-area: 1 / 1 / 2 / 13;
+}
+
+.payments-table table {
+    width: 100%;
+    background-color: #fff;
+}
+
+th,
+td {
+    color: black;
+}
+
+.payments-table .table-container {
+    overflow: auto;
+}
+
+
+/* media queries */
+@media (max-width: 768px) {
+    .payments-container {
+        gap: 30px 10px;
+    }
+}
+

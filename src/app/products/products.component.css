@@ -1,0 +1,93 @@
+:host ::ng-deep #header {
+  background-color: #f6f6f6;
+}
+
+:host ::ng-deep #header .navbar .active,
+:host ::ng-deep #header .navbar-mobile .active {
+  color: #000000;
+  background-color: transparent;
+}
+
+:host ::ng-deep #header .navbar .shop,
+:host ::ng-deep #header .navbar-mobile .shop {
+  background-color: rgb(216 216 216 / 68%);
+}
+
+:host ::ng-deep #header.header-scrolled .navbar .active {
+  background-color: transparent;
+  color: #000000;
+}
+
+:host ::ng-deep #header.header-scrolled .navbar li:hover>a,
+:host ::ng-deep #header.header-scrolled .navbar .shop,
+:host ::ng-deep #header.header-scrolled .navbar .active:hover {
+  background-color: #eccece;
+}
+
+:host ::ng-deep #header .navbar a:hover {
+  background-color: rgb(216 216 216 / 68%);
+}
+
+:host ::ng-deep #header .navbar .dropdown ul a:hover {
+  background-color: transparent;
+}
+
+:host ::ng-deep #header .navbar .cart a:hover,
+:host ::ng-deep #header.header-scrolled .navbar .cart a:hover {
+  background-color: transparent;
+}
+
+:host ::ng-deep footer {
+  position: relative;
+  /* top: 140px; */
+}
+
+.shop-component .product-item .product-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar input[type="radio"] {
+  display: none;
+}
+
+.sidebar ul {
+  padding-left: .5rem;
+}
+
+.modal-contents input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.modal-contents input[type=number]::-webkit-inner-spin-button,
+.modal-contents input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.modal-contents .incrdecr input[type="number"] {
+  align-self: stretch;
+  max-width: 100px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #0000004a;
+}
+
+/* media queries */
+@media (max-width: 600px) {
+  :host ::ng-deep .products-navbar .navbar-input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 375px) {
+  :host ::ng-deep .products-navbar .navbar-input {
+    width: 100%;
+  }
+
+  .modal-contents .incrdecr {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

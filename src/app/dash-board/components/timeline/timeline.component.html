@@ -1,0 +1,129 @@
+<div class="timeline-container">
+    <!-- <div class="timeline-card general-info">
+        <div class="farmer-profile">
+            <div class="farmer-image">
+                <img src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+            </div>
+    
+            <div class="farmer-name">
+                <p>{{user.user.username}}</p>
+            </div>
+        </div>
+    
+        <div class="stats">
+            <div class="views">
+                <div class="icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+    
+                <div class="stats-content">
+                    <span>200</span>
+                    <p>Views</p>
+                </div>
+            </div>
+    
+            <div class="pictures">
+                <div class="icon">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+    
+                <div class="stats-content">
+                    <span>{{posts.length}}</span>
+                    <p>Pictures</p>
+                </div>
+            </div>
+    
+            <div class="videos">
+                <div class="icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+    
+                <div class="stats-content">
+                    <span>{{posts.length}}</span>
+                    <p>Videos</p>
+                </div>
+            </div>
+    
+            <div class="rating">
+                <div class="icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+    
+                <div class="stats-content">
+                    <span>5(200)</span>
+                    <p>Average rating</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="timeline-editing">
+        <div class="create-timeline timeline-card">    
+            <form enctype="multipart/form-data"  class="create-content">
+                <div class="media">
+                    <div class="media-content">    
+                        <div class="image">
+                            <label for="file">
+                                <!-- <i class="fa-solid fa-image"></i> -->
+                                <img src="../../../../assets/img/timeline/timeline-icon.png" alt="video and image icon">
+                                <span class="addmedia">Add Media &nbsp; <span class="arrow">&rarr;</span></span>
+                            </label>
+                            <input title="file" type="file" enctype="multipart/form-data" (change)="onFileSelected($event)" [(ngModel)]="media" id="file" name="file" multiple>
+                        </div>    
+                    </div>  
+                </div>
+    
+                <div class="text">
+                    <div class="text-content">
+                        <div class="form-controls message">
+                            <textarea placeholder="Write your Post Here" [(ngModel)]="caption" id="comment" name="comment" required></textarea>
+                        </div>   
+                    </div>  
+                </div>
+    
+                <div class="form-controls form-btn form-submit">
+                    <button *ngIf="isLoading == false" (click)="PostStories()" type="submit">Create Post&nbsp;&nbsp;<i class="fa-solid fa-circle-down"></i></button>
+                    <button *ngIf="isLoading == true"><div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div></button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="timeline timeline-card">
+            <div class="timeline-header">
+                <h2>My Timeline</h2>
+            </div>
+    
+            <div class="timeline-box">       
+                <div *ngFor="let post of posts" class="timeline-info">
+                    <div class="timeline-content">        
+                        <div class="timeline-profile">
+                            <div class="profile-pic">
+                                <img *ngIf="user.profile_pic" src="{{cloudinaryUrl}}{{user['profile_pic']}}" alt="">
+                                <img *ngIf="!user.profile_pic"
+                                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+                            </div>
+            
+                            <div class="profile-time">
+                                <div class="delete">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </div>
+                                <p>{{post.date_added | timeAgo}}</p>
+                            </div>
+                        </div>
+    
+                        <div class="timeline-media">
+                            <img src="{{cloudinaryUrl}}{{post.media}}" alt="coffee activity">
+                        </div>
+            
+                        <div class="timeline-text">
+                            <p>{{post.caption}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
