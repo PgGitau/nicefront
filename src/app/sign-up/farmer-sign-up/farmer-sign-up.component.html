@@ -21,15 +21,15 @@
         </div>
 
         <div class="label-float">
-            <input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control"
-            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
-            <label for="confirm_password">Confirm Password</label>
-        </div>
-
-        <div class="label-float">
             <input id="password" name="password" [(ngModel)]="password" class="form-control"
             type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
             <label for="password">Password</label>
+        </div>
+
+        <div class="label-float">
+            <input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password" class="form-control"
+            type="{{ isPasswordVisible ? 'text' : 'password' }}" placeholder=" " required>
+            <label for="confirm_password">Confirm Password</label>
         </div>
         
         <password-strength-meter [password]="password"></password-strength-meter>
